@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
             background: url("{{ asset('pantai.jpg') }}") no-repeat center center fixed;
             background-size: cover;
         }
+
         .bg-overlay {
             background-color: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(5px);
@@ -21,6 +23,7 @@
         }
     </style>
 </head>
+
 <body class="d-flex align-items-center justify-content-center vh-100">
 
     <div class="bg-overlay">
@@ -42,12 +45,8 @@
             @csrf
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email"
-                       class="form-control @error('email') is-invalid @enderror"
-                       id="email"
-                       name="email"
-                       value="{{ old('email') }}"
-                       required>
+                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
+                    name="email" value="{{ old('email') }}" required>
                 @error('email')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -55,11 +54,8 @@
 
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password"
-                       class="form-control @error('password') is-invalid @enderror"
-                       id="password"
-                       name="password"
-                       required>
+                <input type="password" class="form-control @error('password') is-invalid @enderror" id="password"
+                    name="password" required>
                 @error('password')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -67,9 +63,15 @@
 
             <button type="submit" class="btn btn-primary w-100">Login</button>
         </form>
+        <div style="display: flex; justify-content: center; ">
+            <p>Akses Demo</p>
+            <p>Email: test@example.com</p>
+            <p>Password: 12345</p>
+        </div>
     </div>
 
     <script src="{{ asset('assets/jquery-3.6.1.js') }}"></script>
     <script src="{{ asset('assets/bootstrap.min.js') }}"></script>
 </body>
+
 </html>
